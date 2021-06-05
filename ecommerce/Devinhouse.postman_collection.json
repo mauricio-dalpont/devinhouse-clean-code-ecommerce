@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "e168e091-0888-42fa-b0e5-1593ff55c6bb",
+		"name": "Devinhouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Product 10\",\r\n    \"price\": 10.2,\r\n    \"supplier\": {\r\n        \"id\": 1,\r\n        \"name\": \"Supplier 0\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update all fields of a product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Product 0\",\r\n    \"price\": 10.5,\r\n    \"supplier\": {\r\n        \"id\": 1,\r\n        \"name\": \"Supplier 0\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update one field of a product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"price\": 10.2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/products/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/products/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Create empty cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/carts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product to a cart",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"products\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Product 0\",\r\n            \"price\": 0.7732602831130884,\r\n            \"supplier\": {\r\n                \"id\": 1,\r\n                \"name\": \"Supplier 0\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"Product 1\",\r\n            \"price\": 1.6403457197597378,\r\n            \"supplier\": {\r\n                \"id\": 1,\r\n                \"name\": \"Supplier 0\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/carts",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/carts/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/carts/checkout/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"carts",
+								"checkout",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
